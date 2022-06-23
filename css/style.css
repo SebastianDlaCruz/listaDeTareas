@@ -1,0 +1,378 @@
+:root{
+    /* Colors */
+    /*Primary*/
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background:  linear-gradient(90deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 91%);    /* Neutral*/
+    /* Light Theme*/
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue-Light: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue-Light: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue-1: hsl(235, 19%, 35%);
+    /* Dark Theme*/
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+    --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue-2: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue-3: hsl(237, 14%, 26%);
+
+    /* global*/
+
+    --height : 60px;
+    --width: 85%;
+    --max-width: 609px;
+    --border: 5px;
+}
+html{
+    box-sizing: border-box;
+}
+.body{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    font-size: 18px;
+    min-height:  100%;
+    background-color: var(--Very-Dark-Blue);
+    transition: background-color 1s ease-in-out;
+}
+/* de azul a negro */
+
+.body.body-blanco{
+    background-color: var(--Very-Light-Gray);
+}
+/* =========== */
+*,
+::after,::before{
+    box-sizing: inherit;
+}
+ul,li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    background: none;
+    border: none; 
+}
+
+img{
+    max-width: 100%;
+    height:  auto;
+}
+
+.header{
+    position: relative;
+    block-size: 280px;
+    inline-size: 100%;    
+}
+
+header img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    object-fit: cover;
+    min-inline-size:  100%;
+    block-size:  100%;
+}
+.header-img{
+    opacity:1;
+    visibility: visible;
+    transition: all 1s ease-in-out;
+}
+.header-img.header-img-active{
+    opacity:0;
+    visibility: hidden;
+}
+
+.header-contenedor{
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    inline-size: var(--width) ;
+    margin: 0 auto;
+    color: var(--Very-Light-Gray);
+}
+.header-contenedor__btn,
+.header-contenedor__btn--blanco{
+    block-size:  30px;
+    inline-size:  30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+/*  cambair de luna a sol */
+.header-contenedor__btn{
+    background-image: url(../images/icon-moon.svg); 
+
+}
+.header-contenedor__btn.header-contenedor__btn--blanco{
+    background-image: url(../images/icon-sun.svg);;
+} 
+/*===========================*/
+
+main{
+    position: relative;
+    min-block-size:  100vh;
+}
+
+.section-header{
+    margin-bottom:  3%;
+}
+.section{
+    position: absolute;
+    top: -5%;
+    left: 0;
+    right: 0;
+    block-size:  550px;
+    inline-size: var(--width);
+    margin: 0 auto;
+}
+.section-header__form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    block-size:  var(--height);
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    border-radius:  var(--border);
+    transition:  background-color 1s ease-in-out;
+}
+.form-input{
+    block-size:  65%;
+    inline-size: 72%;
+    background-color: transparent;
+    color:var(--Dark-Grayish-Blue-Light);
+    border: none;
+}
+.section-header__btn--acciones{
+    display: block;
+    padding: .9em; 
+    border: 1px solid var(--Dark-Grayish-Blue);
+    border-radius:  50%;
+    background-color: transparent;
+  
+}
+/* =========================== */
+.section-header__btn--acciones.section-header__btn-active{
+    background-image: url(../images/icon-check.svg),
+    var(--Check-Background);
+    background-size: cover  50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* =========================== */
+
+.section-header_btn--eliminar{
+    padding: .9em; 
+    background-image: url(../images/icon-cross.svg);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ul{
+    max-block-size: 80%;
+    inline-size: 100%;
+    overflow-y: auto;
+    border: var(--border);
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    transition:  background-color 1s ease-in-out;
+}
+
+
+.ul-li{
+    display: flex;
+    justify-content: space-around ;
+    align-items:  center;
+    background-color: transparent;
+    block-size:  var(--height);
+    border-bottom:  .7px solid var(--Dark-Grayish-Blue);
+    opacity:1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out;
+}
+.ul-li.ul-li-active{
+    display: none;
+    opacity:0;
+    visibility:hidden;
+
+}
+
+.ul-li__acciones{
+    padding: 1.2em; 
+    border: 1px solid var(--Dark-Grayish-Blue);
+    border-radius:  50%;
+    background-color: transparent;
+}
+
+.ul-li__acciones.ul-li__acciones-active{
+    background-image: url(../images/icon-check.svg),
+    var(--Check-Background);
+    background-size: cover  55%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ul-li__p{
+    position: relative;
+    block-size:  65%;
+    min-inline-size: 72%;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    line-height:  35px;
+    color:var(--Dark-Grayish-Blue-Light);
+}
+
+
+/* P  active */
+.ul-li__p.ul-li__p-active::after{
+    position: absolute;
+    top: 46%;
+    left: 0;
+    content: ' ';
+    inline-size: 100%;
+    block-size:   1px;
+    background-color: var(--Dark-Grayish-Blue);
+    animation:  inline 1s ease-in-out;
+}
+.ul-li__p-active.p-color{
+    color: var(--Dark-Grayish-Blue);
+}
+@keyframes  inline{
+    0%{
+        inline-size: 0;
+    }
+    100%{
+
+        inline-size: 100%;
+    }
+}
+
+/* == */
+
+.ul-li__eliminar{
+    padding: .9em; 
+    background-image: url(../images/icon-cross.svg);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    visibility: 0;
+    transition: opacity: 1s ease-in-out;
+}
+.ul-li__eliminar:hover{
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.ul-info{
+    display:  flex;
+    justify-content:  space-between;
+    align-items: center;
+    block-size:  10%;
+    min-inline-size:  100%;
+    background-color: var(--Very-Dark-Desaturated-Blue);    
+    color: var(--Very-Dark-Grayish-Blue-2);
+    transition:  background-color 1s ease-in-out;
+}
+.ul-info__contenedor{
+    display:  flex;
+    justify-content:  center;
+    align-items: center;
+    min-inline-size: 20%;
+}
+
+.ul-info__contenedor span{
+    margin: 0 15px;
+}
+
+.ul-info__btn{
+    margin-right: 3%;
+    color: var(--Very-Dark-Grayish-Blue-2);
+}
+
+.section-footer{
+    display: flex;
+    justify-content:  space-around ;
+    align-items: center ;
+    block-size:  10%;
+    margin-top:  3%;
+    border-radius: var(--border) ;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    transition:  background-color 1s ease-in-out;
+}
+
+
+.btns{
+        font-size:  1.3rem;
+        color: var(--Very-Dark-Grayish-Blue-2);
+}
+
+.btns.btns-active{
+    color: var(--Bright-Blue);
+}
+.footer{
+    
+    inline-size:  100%;
+}
+
+.footer p{
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--Very-Dark-Grayish-Blue-2);
+}
+
+.cambio-de-tema{
+    background-color: var(--Very-Light-Grayish-Blue);
+    
+}
+
+@media(hover:hover){
+    .header-contenedor__btn:hover{
+        background-image: url(../images/icon-sun.svg);
+    }
+    .header-contenedor__btn--blanco:hover{
+        background-image: url(../images/icon-moon.svg);
+    }    
+    .section-header__btn--acciones:hover{
+        background-image: url(../images/icon-check.svg),
+        var(--Check-Background);
+        background-size: cover  50%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .ul-li__acciones:hover{
+        background-image: url(../images/icon-check.svg),
+        var(--Check-Background);
+        background-size: cover  50%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .btns:hover{
+        color: var(--Bright-Blue);
+    }
+}
+
+@media screen and (min-width: 609px){
+
+    .header-contenedor,
+    .section{
+        max-inline-size: var(--max-width);
+    }
+    .ul{
+
+        max-inline-size: var(--max-width);
+    }
+    
+}

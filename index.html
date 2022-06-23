@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Todo app</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="body" id="body">
+  <header class="header">
+    <picture>
+      <source media="(min-width: 850px)" srcset="./images/bg-desktop-light.jpg">
+      <img src=".//images/bg-mobile-light.jpg" alt="hero img">
+    </picture>
+    <picture>
+      <source media="(min-width:  850px )" id="source" srcset="./images/bg-desktop-dark.jpg">
+      <img src="./images/bg-mobile-dark.jpg" alt="hero img" id="header-img" class="header-img">
+    </picture>
+    <div class="header-contenedor">
+      <h1>Todo</h1>
+      <button class="header-contenedor__btn" id="cambiarTema"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <header class="section-header">
+        <form class="section-header__form" id="form" data-tema="">
+          <span class="section-header__btn--acciones"></span>
+          <input type="text" name="text" id="text" placeholder="Create a new todo..." class="form-input" required>
+          <div class="section-header_btn--eliminar"></div>
+        </form>
+      </header>
+      <ul class="ul" id="ul" data-tema=""></ul>
+      <div class="ul-info" data-tema="">
+        <div class="ul-info__contenedor">
+          <span id="cantidad">0</span>
+          <p>Items left</p>
+        </div>
+        <button class="ul-info__btn" id="clear">Clear Completed</button>
+      </div>
+      <footer class="section-footer" data-tema="">
+        <button class="btns" data-btn="" id="all">All</button>
+        <button class="btns" data-btn="" id="active">Active</button>
+        <button class="btns" data-btn="" id="completed">Completed</button>
+      </footer>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Drag and drop to reorder list</p>
+  </footer>
+
+  <template id="template">
+    <li class="ul-li" id="ul-li">
+      <button class="ul-li__acciones" id="accion"></button>
+      <p class="ul-li__p" id="texto"></p>
+      <button class="ul-li__eliminar" id="eliminar"></button>
+    </li>
+  </template>
+
+
+  <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>
