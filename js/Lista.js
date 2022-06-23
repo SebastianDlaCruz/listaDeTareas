@@ -16,7 +16,7 @@ class Lista {
         const $form = doc.getElementById(form),
             frag = this.fragment;
         $form.addEventListener('keydown', (event) => {
-            if (event.code === 'Enter' && !event.target.value !== true) {
+            if (event.code === 'Enter' && !event.target.value !== true || event.code === 'Ir') {
                 event.preventDefault();
                 let tarea = event.target.value;
                 const template = this.template;
