@@ -171,13 +171,13 @@ main{
 }
 /* =========================== */
 
-.section-header_btn--eliminar{
-    padding: .9em; 
-    background-image: url(../images/icon-cross.svg);
-    background-size: 75%;
-    background-repeat: no-repeat;
-    background-position: center;
+.crear{
+
+    border: none;
+    background-color:  transparent;
+    color: var(--Dark-Grayish-Blue-Light);
 }
+
 
 .ul{
     max-block-size: 80%;
@@ -360,6 +360,11 @@ main{
     }
 
     .btns:hover{
+        color: var(--Bright-Blue);
+    }
+
+    .crear:hover{
+
         color: var(--Bright-Blue);
     }
 }

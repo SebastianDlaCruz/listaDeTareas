@@ -15,10 +15,11 @@ class Lista {
     crearTarea(form) {
         const $form = doc.getElementById(form),
             frag = this.fragment;
-        $form.addEventListener('keydown', (event) => {
-            if (event.code === 'Enter' && !event.target.value !== true || event.code === 'Ir') {
-                event.preventDefault();
-                let tarea = event.target.value;
+        $form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (!event.target.matches(`#crear`)) {
+
+                let tarea = event.target.children[1].value;
                 const template = this.template;
                 template.querySelector('#ul-li');
                 template.querySelector('#accion');
@@ -33,6 +34,8 @@ class Lista {
                 let texto = this.ul.lastElementChild.children[1];
 
                 this.guardarTexto(texto.textContent);
+
+
 
             }
 
