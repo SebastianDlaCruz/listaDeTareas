@@ -17,27 +17,23 @@ class Lista {
             frag = this.fragment;
         $form.addEventListener('submit', (event) => {
             event.preventDefault();
-            if (!event.target.matches(`#crear`)) {
 
-                let tarea = event.target.children[1].value;
-                const template = this.template;
-                template.querySelector('#ul-li');
-                template.querySelector('#accion');
-                template.querySelector('#texto').textContent = tarea;
-                let $copi = doc.importNode(template, true);
-                frag.appendChild($copi);
-                $form.reset();
+            let tarea = event.target.children[1].value;
+            const template = this.template;
+            template.querySelector('#ul-li');
+            template.querySelector('#accion');
+            template.querySelector('#texto').textContent = tarea;
+            let $copi = doc.importNode(template, true);
+            frag.appendChild($copi);
+            $form.reset();
 
-                this.ul.appendChild(frag);
-                this.contarLasListasDejadas(this.ul.firstElementChild);
+            this.ul.appendChild(frag);
+            this.contarLasListasDejadas(this.ul.firstElementChild);
 
-                let texto = this.ul.lastElementChild.children[1];
+            let texto = this.ul.lastElementChild.children[1];
 
-                this.guardarTexto(texto.textContent);
+            this.guardarTexto(texto.textContent);
 
-
-
-            }
 
         });
     }
@@ -148,6 +144,5 @@ class Lista {
         */
 
     }
-
 }
 export default Lista;

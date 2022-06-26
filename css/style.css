@@ -171,6 +171,14 @@ main{
 }
 /* =========================== */
 
+.exit{
+    display:inline-block;
+    padding: .5rem;
+    background-image: url('../images/icon-cross.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .crear{
 
     border: none;
